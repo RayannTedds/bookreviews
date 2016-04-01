@@ -1,0 +1,65 @@
+body {
+    font-family: Georgia, sans-serif;
+    background-color: #e5d9cc;
+}
+
+h1 {
+    text-align: left;
+    font-size: 30pt;
+}
+
+h2 {
+    font-size: 13pt;
+}
+
+
+.arrowbox {
+	position: relative;
+	height: auto;
+	width: auto;
+	background-color: transparent;
+	border: none;
+	margin-right: 255px;
+	float: right;
+	font-size: 13pt;
+}
+
+.arrowbox:after {
+	top: 50%;
+	margin-left: 10px;
+	border: solid transparent;
+	content: "";
+	position: absolute;
+	border-color: rgba(26, 118, 145, 0);
+	border-left-color: rgba(26, 118, 145, 0.2);
+	border-width: 20px;
+	margin-top: -20px;
+}
+
+.title {
+    color: black;
+    background-color: rgba(26,118,145,0.2);
+    margin-top: 25px;
+    margin-bottom: 50px;
+    padding-left: 40px;
+    padding-top: 0.5px;
+    padding-bottom: 5px;
+}
+
+img {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+	
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+	
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	z-index: -1;
+}
+
