@@ -1,51 +1,42 @@
+<!--The html file in which the design inherits from-->
 {% extends "layout.html" %}
   
 {% block content %}
     <head>
-        <title>{% for name in cursor %} {{ name[1] }} {% endfor %} </title>
+        <title>{% for name in cursor %} {{ name[1] }} {% endfor %} </title> <!--Name of page in the tab, which has been pulled from the database.-->
     </head>
-
-    
-    <!-- Page Content -->
     <div class="container colour">
-        <!-- Team Members Row -->
+        <!-- Page content -->
         <div class="row">
             <div class="col-lg-4 col-sm-6 text-center  book-title">
-                
-                <img class="img-center img-circle main" id="main" onload="change() ;" alt="" src="http://placehold.it/120x120"/>
-                
+                <img class="img-center img-circle main" id="main" onload="change() ;" alt="" src="http://placehold.it/120x120"/> <!--Image displayed on the left - hand side of the page and a function is called as soon as the page loads-->
+                <!--Content about other books by the same author-->
                 <div id="others">
                     <p class="sub"><b>Other books from this author:</b></p>
-                    
                     <div class="col-lg-2 col-sm-6">
-                        <img class="img-circle img-sm" id="author1" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
+                        <img class="img-circle img-sm" id="author1" onload="change() ;" alt="" src="http://placehold.it/40x40"/> 
                     </div>
-                    
                     <div class="col-lg-2 col-sm-6">
                         <img class="img-circle img-sm" id="author2" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
                     </div>
-                    
                     <div class="col-lg-2 col-sm-6">
                         <img class="img-circle img-sm" id="author3" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
                     </div>
-                    
                     <div class="col-lg-2 col-sm-6">
                         <img class="img-circle img-sm" id="author4" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
                     </div>
-                    
                     <div class="col-lg-2 col-sm-6">
                         <img class="img-circle img-sm" id="author5" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
                     </div>
-                    
                     <div class="col-lg-2 col-sm-6">
                         <img class="img-circle img-sm" id="author6" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
                     </div>
-                    
                 </div>
-                
             </div>
-            
+            <!--Main page content.-->
             <div class="col-lg-8 col-sm-6 book-title">
+                <!--The parts of the code which are enclosed by curly brackets and percentage signs are the sections of the web content which have been
+                pulled from the database and then displayed accordingly.-->
                 {% for name in cursor %} 
                 <h2>{{ name[1] }}
                 {% endfor %} 
@@ -57,7 +48,6 @@
                 {% for surname in cursor %}
                 {{ surname[30] }}</small></h2> 
                 {% endfor %}
-                
                 <p class="book"><i>{% for blurb in cursor %}{{ blurb[3] }}{% endfor %}</i></p>
                 <div class="col-lg-6">
                     <p><b>Publication year: </b>{% for published in cursor %} {{ published[2] }} </p> {% endfor %}
@@ -81,9 +71,8 @@
                         {% for award10 in cursor %}<p id="award10">{{ award10[43] }}</p>{% endfor %} 
                 </div>
             </div>
-            
+            <!--Review section of the site, everything is pulled from the database as before.-->
             <div class="col-lg-12 space">
-
                 <h3 class="book">My Review <small>{% for myReviewDate in cursor %} {{ myReviewDate[8] }} {% endfor %}</small></h3>
                 <p>{% for myReview in cursor %} {{ myReview[7] }} {% endfor %}</p>
             </div>
@@ -127,28 +116,15 @@
                 <h3 class="book">{% for review10author in cursor %} {{ review10author[28] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
                 <p><i>{% for review10 in cursor %} {{ review10[27] }} {% endfor %}</i></p>
             </div>
-            
         </div>
-        
         <hr>
-
-        <!-- Footer -->
+        <!-- Footer, what is displayed at the bottom of the page-->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Rayann Tedds 2016</p>
+                    <p>Copyright &copy; Rayann Tedds 2016</p>< !--Copyright symbol is also displayed here.-->
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
         </footer>
-
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 {% endblock %}

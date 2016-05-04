@@ -1,21 +1,19 @@
+<!--The html file in which the design inherits from-->
 {% extends "layout.html" %}
   
 {% block content %}
-     <head>
-        <title>Have Your Say</title>
+    <head>
+        <title>Have Your Say</title> <!--Name of page in the tab-->
     </head>
-    
-    <!-- Page Content -->
-    <div class="container colour">
-
-        <!-- Introduction Row -->
+    <div class="container colour"> <!--Classes link to css-->
+        <!-- Introduction row, title and subtitle (and link to a further page).-->
         <div class="row">
             <div class="col-lg-12 col-sm-4 book-title title">
                 <h2>Have Your Say...</h2>
                 <p class="book"><i>Let me know what you think!</i></p>
                 <div class="col-lg-12 col-sm-4">
                 <p> You can leave me your comments and reviews below, or see others comments <a href="http://bookreviews-teddsr.c9users.io:8080/have-your-say.html">here</a></p>
-                
+                <!-- Below are the error message which occur if the contact form has not been completed correctly.-->
                 {% for message in get_flashed_messages() %}
                     <div class="flash">{{ message }}</div>
                 {% endfor %}
@@ -35,41 +33,36 @@
                 {% for message in form.message.errors %}
                     <div class="flash">{{ message }}</div>
                 {% endfor %}
-                
-                <form action="{{ url_for('contact') }}" method=post>
+                <!-- This is the contact form is defined and the post method which is used to send information via email.-->
+                <form action="" method=post>
                     {{ form.hidden_tag() }}
-                    
                     <div id="name">
+                         <!-- The associated parts of the form are pulled and displayed using these code snippets.-->
                         {{ form.name.label }}
                         {{ form.name }}
                     </div>
-                    
                     <div id="email">
                         {{ form.email.label }}
                         {{ form.email }}
                     </div>
-                    
                     <div id="bookname">    
                         {{ form.bookname.label }}
                         {{ form.bookname }}
                     </div>
-                    
                     <div id="message">
                         {{ form.message.label }}
                         {{ form.message }}
-                        
                         {{ form.submit }}
                     </div>
                 </form>
             </div>
         </div>
         <hr>
-
-        <!-- Footer -->
+        <!-- Footer, what is displayed at the bottom of the page-->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Rayann Tedds 2016</p>
+                    <p>Copyright &copy; Rayann Tedds 2016</p> <!--Copyright symbol is also displayed here.-->
                 </div>
             </div>
         </footer>

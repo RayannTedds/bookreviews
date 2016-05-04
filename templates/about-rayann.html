@@ -1,24 +1,22 @@
+<!--The html file in which the design inherits from-->
 {% extends "layout.html" %}
   
 {% block content %}
     <head>
-        <title>About Rayann</title>
+        <title>About Rayann</title> <!--Name of page in the tab-->
     </head>
-    <!-- Page Content -->
-    <div class="container colour">
-
-        <!-- Team Members Row -->
+    <div class="container colour"> <!--Classes link to css-->
+        <!-- Introduction row, title and subtitle (and link to a further page).-->
         <div class="row">
             <div class="col-lg-4 col-sm-6 text-center book-title title ">
-                <img class="img-center img-circle main" alt="" src="static/img/me.jpg"/>
-                <div class="left">
+                <img class="img-center img-circle main" alt="" src="static/img/me.jpg"/> <!--Image displayed on the left - hand side of the page -->
+                <div class="left"> <!--Positioned on the left of the screen -->
                     <p><b>Full name:</b> Rayann Abbey Tedds</p>
                     <p><b>Bithday:</b> 28th January</p>
                     <p><b>University:</b> Coventry University</p>
                     <p><b>Location:</b> Warwickshire, England, United Kingdom</p>
                 </div>
             </div>
-            
             <div class="col-lg-8 col-sm-4 book-title title">
                 <h2>About Rayann</h2>
                 <p class="book"><i>Let me introduce myself...</i></p>
@@ -27,13 +25,13 @@
                     <p>My name is Rayann and I can currently a second year student at Coventry University, studying Computing. As part of my <i>Developing The Modern Web (205CDE)</i> module, my coursework is based upon creating a website and so this is the product from that brief. However, reading has always been a keen interest of mine and so I have created this website in order to express my views on books I am reading as the years progress. This site gives you the chance to have your say and be featured also!</p>
                     <p><b>Happy reading!</b></p>
                 </div>
-            
+                <!-- List on the right-hand side of the page -->
                 <div class="col-lg-4 col-sm-4">
                     <p><b>My Top 10 Books</b></p>
                     <ol>
                         <li>The Book Thief</li>
                         <li>To Kill A Mockingbrd</li>
-                        <li><a href="https://bookreviews-teddsr.c9users.io/tls.html">The Lost Symbol</a></li>
+                        <li><a href="https://bookreviews-teddsr.c9users.io/tls.html">The Lost Symbol</a></li> <!-- This list is link to the relevant book pages, they will be updated when the books are all added to the site. -->
                         <li><a href="https://bookreviews-teddsr.c9users.io/aad.html">Angels & Demons</a></li>
                         <li>Harry Potter and the Half Blood Prince</li>
                         <li><a href="https://bookreviews-teddsr.c9users.io/rm.html">Remember Me?</a></li>
@@ -44,12 +42,12 @@
                     </ol>
                 </div>
             </div>
-            
+            <!-- Links to the most recent books, at the bottom of the page-->
             <div class="col-lg-12 book-title ">
                 <p class="none"><b><center>Recently added reviews</center></b></p>
                 <div class="col-lg-2 ">
-                    <a href="#" id="gsaw" onclick="document.location=this.id+'.html';return false;" >
-                        <img class="img-circle img-n" alt="" src="static/img/gsaw.png"/>
+                    <a href="#" id="gsaw" onclick="document.location=this.id+'.html';return false;" > <!--A link which is created by taking the given id and .html - the page is redirected when the link is clicked by the mouse.-->
+                        <img class="img-circle img-n" alt="" src="static/img/gsaw.png"/> <!--Image is displayed by default-->
                     </a>
                 </div>
                 <div class="col-lg-2">
@@ -78,28 +76,15 @@
                     </a>
                 </div>
             </div>
-            
         </div>
-
         <hr>
-
-        <!-- Footer -->
+        <!-- Footer, what is displayed at the bottom of the page-->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Rayann Tedds 2016</p>
+                    <p>Copyright &copy; Rayann Tedds 2016</p> <!--Copyright symbol is also displayed here.-->
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
         </footer>
-
     </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 {% endblock %}

@@ -596,6 +596,15 @@ function change() {
         document.getElementById('amazon').href="https://www.amazon.co.uk/Wedding-Night-Sophie-Kinsella/dp/0552778516/ref=sr_1_1?s=books&ie=UTF8&qid=1462147517&sr=1-1&keywords=wedding+night";
         document.getElementById('whsmith').href="http://www.whsmith.co.uk/products/wedding-night/9780552778510";
         document.getElementById('waterstones').href="https://www.waterstones.com/book/wedding-night/sophie-kinsella/9780552778510";
+        document.getElementById('award2').style.visibility="hidden";
+        document.getElementById('award3').style.visibility="hidden";
+        document.getElementById('award4').style.visibility="hidden";
+        document.getElementById('award5').style.visibility="hidden";
+        document.getElementById('award6').style.visibility="hidden";
+        document.getElementById('award7').style.visibility="hidden";
+        document.getElementById('award8').style.visibility="hidden";
+        document.getElementById('award9').style.visibility="hidden";
+        document.getElementById('award10').style.visibility="hidden";
         document.getElementById('review2').style.visibility="hidden";
         document.getElementById('review3').style.visibility="hidden";
         document.getElementById('review4').style.visibility="hidden";

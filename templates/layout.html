@@ -1,62 +1,55 @@
+<!-- This entire html file is used to define the css and javascript files which must be used by each webpage which is linked to this page. 
+It also contains the navigation bar for each page. This saves a huge amount of coding and is easily linked to the relevant pages. -->
 <!DOCTYPE html>
+<!-- The language has been set to English by default. -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/recent-reviews.css">    
-    <link href="css/round-about.css" rel="stylesheet">
-    <script src="static/js/pages.js"></script>
-  </head>
+    <head>
+        <!-- Represents any character in the Unicode standard. -->
+        <meta charset="utf-8">
+        <!-- The default size of the webpage which makes it good to be used on any screen size. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Links to the relevant css and javascript files which need to be used. -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/recent-reviews.css">    
+        <link href="css/round-about.css" rel="stylesheet">
+        <script src="static/js/pages.js"></script>
+    </head>
   
-  <header>
-    <img class="background" src="static/img/open-book.jpg" alt="">
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <header>
+        <!-- The default background image for each page. -->
+        <img class="background" src="static/img/open-book.jpg" alt="">
+        <!-- Navigation bar at the top of the page -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- All of the navigation links that are displayed at the top of the screen -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="https://bookreviews-teddsr.c9users.io/about-rayann.html">About Rayann</a>
+                        </li>
+                        <li>
+                            <a href="https://bookreviews-teddsr.c9users.io/a-z.html">A - Z</a>
+                        </li>
+                        <li>
+                            <a href="https://bookreviews-teddsr.c9users.io/recent.html">Most Recent</a>
+                        </li>
+                        <li>
+                            <a href="https://bookreviews-teddsr.c9users.io/jf.html">Currently Reading</a>  <!-- This link will change according to which book is the being read currently. -->
+                        </li>
+                        <li>
+                            <a href="https://bookreviews-teddsr.c9users.io/comments.html">Have Your Say</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <body>
+        <!-- This is where the content will change according to the different pages. -->     
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/about-rayann.html">About Rayann</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/a-z.html">A - Z</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/recent.html">Most Recent</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/jf.html">Currently Reading</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/comments.html">Have Your Say</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            {% block content %}
+            {% endblock %}
         </div>
-        <!-- /.container -->
-    </nav>
-  </header>
-  
-  <body>
-     
-    <div class="container">
-      {% block content %}
-      {% endblock %}
-    </div>
-  </body>
-  
-
+    </body>
 </html>

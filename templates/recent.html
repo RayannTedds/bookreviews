@@ -1,31 +1,28 @@
+<!--The html file in which the design inherits from-->
 {% extends "layout.html" %}
   
 {% block content %}
     <head>
-        <title>Most Recent</title>
+        <title>Most Recent</title>  <!--Name of page in the tab-->
     </head>
     
-    <!-- Page Content -->
-    <div class="container colour">
-
-        <!-- Introduction Row -->
+    <div class="container colour"> <!--Classes link to css-->
+        <!-- Introduction row, title and subtitle (same for the following 5 sections)-->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">What's The Latest?</h1>
                 <p>Below, you can see the 6 most recent book reviews. Click on a section for the review and further details.</p>
             </div>
         </div>
-
-        <!-- Team Members Row -->
+        <!--The grid layout which hold information about the 6 most recent books which have been read and reviewed.-->
         <div class="row">
             <div class="col-lg-4 col-sm-6 text-center height hover">
-                <a id="gsaw" onclick="document.location=this.id+'.html';return false;" >
-                    <img src="static/img/gsaw.png" alt="" class="img-center img-circle" />
+                <a id="gsaw" onclick="document.location=this.id+'.html';return false;" > <!--A link which is created by taking the given id and .html - the page is redirected when the link is clicked by the mouse.-->
+                    <img src="static/img/gsaw.png" alt="" class="img-center img-circle" /> <!--Image is displayed by default-->
                     <h3>Go Set A Watchman <small>Harper Lee</small></h3>
                     <p>Harper Lee's sequel novel to the much loved <i>'To Kill A Mockingbird'.</i></p>
                 </a>
             </div>
-            
             <div class="col-lg-4 col-sm-6 text-center height">
                 <a id="soh" onclick="document.location=this.id+'.html';return false;" >
                     <img class="img-circle img-responsive img-center" src="static/img/soh.png" alt="">
@@ -33,7 +30,6 @@
                     <p>Becky returns in part 3.5 of the <i>Shopholic</i> series.</p>
                 </a>
             </div>
-            
             <div class="col-lg-4 col-sm-6 text-center height">
                 <a id="tswk" onclick="document.location=this.id+'.html';return false;" >
                     <img class="img-circle img-responsive img-center" src="static/img/tswk.png" alt="">
@@ -73,11 +69,11 @@
         </div>
         <hr>
 
-        <!-- Footer -->
+        <!-- Footer, what is displayed at the bottom of the page-->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Rayann Tedds 2016</p>
+                    <p>Copyright &copy; Rayann Tedds 2016</p> <!--Copyright symbol is also displayed here.-->
                 </div>
             </div>
         </footer>

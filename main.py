@@ -1,9 +1,11 @@
+#Imports that are needed for the entire website.
 import os
 import sqlite3
 from flask import Flask, make_response, abort, redirect, g, render_template, request, flash, url_for
 from forms import ContactForm
 from flask.ext.mail import Message, Mail
 
+#Initialisation of the website and web server
 mail = Mail()
 app = Flask(__name__)
 
@@ -21,9 +23,10 @@ app.config.update(
 
 mail = Mail(app)
 
+#Routing  of the application with the relevant templates
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html')    
 
 @app.route('/recent.html')
 def recent():
@@ -37,14 +40,16 @@ def rayann():
 def az():
     return render_template('a-z.html')
 
+#Routing of the application to the comments section. It has a get and post method which will help to send emails to certain email addresses.
 @app.route('/comments.html', methods=['GET','POST'])
 def contact():
     form = ContactForm()
-    
+    #If all of the boxes are not filled then an error message is displayed.
     if request.method == 'POST':
         if form.validate() == False:
             flash('Please fill all the boxes!')
             return render_template('comments.html', form=form)
+        #If all of the are boxes correctly then 2 emails are sent: one to the user who made the comment, the other to myself.
         else:
             msg = Message(form.bookname.data, sender='rayann@reviews.com', recipients=[form.email.data])
             msg.body = "Hello %s, \n\n Thank you for your recent view on my website. Keep an eye out to see if it appears on the site! \n Your review/comment is shown below: \n\n Reviewed book: %s\n %s\n\nRegards,\nRayann """%(form.name.data, form.bookname.data, form.message.data)
@@ -61,15 +66,11 @@ def contact():
 def say():
     return render_template('have-your-say.html')
 
-@app.route('/templates/modal.html')
-def mod():
-    return render_template('modal.html')
-
-@app.before_request                     #to run a function before every request from the browser, getting the database
+@app.before_request #to run a function before every request from the browser, getting the database
 def before_request():
     g.db = sqlite3.connect("books.db")
 
-@app.route('/gsaw.html')                                  #getting the query from the database for a specific page
+@app.route('/gsaw.html') #getting the query from the database for a specific page
 def gsaw():
     cursor = g.db.execute("SELECT * FROM book NATURAL  JOIN author, genre, awards  WHERE bookID=1000000 AND author.authorID=1 AND genre.genreID=1000 AND awards.awardGroupID='b'").fetchall()
     return render_template('book.html', cursor=cursor)
