@@ -1,68 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/recent-reviews.css">
-    <title>About Rayann</title>
-
-    <!-- Custom CSS -->
-   <link href="css/round-about.css" rel="stylesheet">
-   
-
-</head>
-
-<body>
-    
-    <img class="background" src="static/img/open-book.jpg" alt="">
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="https://booksreviews-teddsr.c9users.io/about-rayann.html">About Rayann</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/a-z.html">A - Z</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/recent.html">Most Recent</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/have-your-say.html">Have Your Say</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    
-    
+{% extends "layout.html" %}
+  
+{% block content %}
+    <head>
+        <title>About Rayann</title>
+    </head>
     <!-- Page Content -->
     <div class="container colour">
-
-        <!-- Introduction Row -->
-        <div class="row">
-            
-        </div>
 
         <!-- Team Members Row -->
         <div class="row">
@@ -72,7 +15,7 @@
                     <p><b>Full name:</b> Rayann Abbey Tedds</p>
                     <p><b>Bithday:</b> 28th January</p>
                     <p><b>University:</b> Coventry University</p>
-                    <p><b>Country:</b> Warwickshire, England, United Kingdom</p>
+                    <p><b>Location:</b> Warwickshire, England, United Kingdom</p>
                 </div>
             </div>
             
@@ -81,7 +24,7 @@
                 <p class="book"><i>Let me introduce myself...</i></p>
                 <div class="col-lg-8 col-sm-4">
                     <p><b>Just a quick hello!</b></p>
-                    <p>My name is Rayann and I can currently a second year student at Coventry University, studying Computing. As part of my <i>Developing The Modern Web (206CDE)</i> module, my coursework is based upon creating a website and so this is the product from that brief. However, reading has always been a keen interest of mine and so I have created this website in order to express my views on books I am reading as the years progress. This site gives you the chance to have your say and be featured also!</p>
+                    <p>My name is Rayann and I can currently a second year student at Coventry University, studying Computing. As part of my <i>Developing The Modern Web (205CDE)</i> module, my coursework is based upon creating a website and so this is the product from that brief. However, reading has always been a keen interest of mine and so I have created this website in order to express my views on books I am reading as the years progress. This site gives you the chance to have your say and be featured also!</p>
                     <p><b>Happy reading!</b></p>
                 </div>
             
@@ -90,14 +33,14 @@
                     <ol>
                         <li>The Book Thief</li>
                         <li>To Kill A Mockingbrd</li>
-                        <li>The Lost Symbol</li>
-                        <li>Angels and Demons</li>
+                        <li><a href="https://bookreviews-teddsr.c9users.io/tls.html">The Lost Symbol</a></li>
+                        <li><a href="https://bookreviews-teddsr.c9users.io/aad.html">Angels & Demons</a></li>
                         <li>Harry Potter and the Half Blood Prince</li>
-                        <li>Remember Me?</li>
+                        <li><a href="https://bookreviews-teddsr.c9users.io/rm.html">Remember Me?</a></li>
                         <li>The Crucible</li>
-                        <li>Shopaholic and Sister</li>
+                        <li><a href="https://bookreviews-teddsr.c9users.io/sas.html">Shopaholic and Sister</a></li>
                         <li>Breaking Dawn</li>
-                        <li>Can You Keep a Secret?</li>
+                        <li><a href="https://bookreviews-teddsr.c9users.io/cykas.html">Can You Keep A Secret?</a></li>
                     </ol>
                 </div>
             </div>
@@ -159,7 +102,4 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
-</body>
-
-</html>
+{% endblock %}

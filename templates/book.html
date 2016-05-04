@@ -1,60 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+  
+{% block content %}
+    <head>
+        <title>{% for name in cursor %} {{ name[1] }} {% endfor %} </title>
+    </head>
 
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/recent-reviews.css">
-    <title>{% for name in cursor %} {{ name[1] }} {% endfor %} </title>
-    <script src="static/js/pages.js"></script>
-
-    <!-- Custom CSS -->
-    <link href="css/round-about.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-    <img class="background" src="static/img/open-book.jpg" alt="">
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/about-rayann.html">About Rayann</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/a-z.html">A - Z</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/recent.html">Most Recent</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/have-your-say.html">Have Your Say</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    
     
     <!-- Page Content -->
     <div class="container colour">
@@ -64,37 +14,33 @@
                 
                 <img class="img-center img-circle main" id="main" onload="change() ;" alt="" src="http://placehold.it/120x120"/>
                 
-                <p class="sub"><b>Other books from this author:</b></p>
-                
-                <div class="col-lg-2 col-sm-6">
-                    <a href="#" id="author1" onclick="document.location=this.id+'.html';return false;" >
-                        <img class="img-circle img-sm" alt="" src="http://placehold.it/40x40"/>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <a href="#" id="author2" onclick="document.location=this.id+'.html';return false;" >
-                        <img class="img-circle img-sm" alt="" src="http://placehold.it/40x40"/>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <a href="#" id="author3" onclick="document.location=this.id+'.html';return false;" >
-                        <img class="img-circle img-sm" alt="" src="http://placehold.it/40x40"/>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <a href="#" id="author4" onclick="document.location=this.id+'.html';return false;" >
-                        <img class="img-circle img-sm" alt="" src="http://placehold.it/40x40"/>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <a href="#" id="author5" onclick="document.location=this.id+'.html';return false;" >
-                        <img class="img-circle img-sm" alt="" src="http://placehold.it/40x40"/>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-sm-6">
-                    <a href="#" id="author6" onclick="document.location=this.id+'.html';return false;" >
-                        <img class="img-circle img-sm" alt="" src="http://placehold.it/40x40"/>
-                    </a>
+                <div id="others">
+                    <p class="sub"><b>Other books from this author:</b></p>
+                    
+                    <div class="col-lg-2 col-sm-6">
+                        <img class="img-circle img-sm" id="author1" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
+                    </div>
+                    
+                    <div class="col-lg-2 col-sm-6">
+                        <img class="img-circle img-sm" id="author2" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
+                    </div>
+                    
+                    <div class="col-lg-2 col-sm-6">
+                        <img class="img-circle img-sm" id="author3" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
+                    </div>
+                    
+                    <div class="col-lg-2 col-sm-6">
+                        <img class="img-circle img-sm" id="author4" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
+                    </div>
+                    
+                    <div class="col-lg-2 col-sm-6">
+                        <img class="img-circle img-sm" id="author5" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
+                    </div>
+                    
+                    <div class="col-lg-2 col-sm-6">
+                        <img class="img-circle img-sm" id="author6" onload="change() ;" alt="" src="http://placehold.it/40x40"/>
+                    </div>
+                    
                 </div>
                 
             </div>
@@ -105,17 +51,17 @@
                 {% endfor %} 
                 
                 {% for forename in cursor %}
-                <small> {{ forename[19] }} 
+                <small> {{ forename[29] }} 
                 {% endfor %} 
                 
                 {% for surname in cursor %}
-                {{ surname[20] }}</small></h2> 
+                {{ surname[30] }}</small></h2> 
                 {% endfor %}
                 
-                <p class="book"><i>Blurb</i></p>
+                <p class="book"><i>{% for blurb in cursor %}{{ blurb[3] }}{% endfor %}</i></p>
                 <div class="col-lg-6">
                     <p><b>Publication year: </b>{% for published in cursor %} {{ published[2] }} </p> {% endfor %}
-                    <p><b>Genre: </b>{% for genre in cursor %} {{ genre[22] }} </p> {% endfor %}
+                    <p><b>Genre: </b>{% for genre in cursor %} {{ genre[32] }} </p> {% endfor %}
                     <p><b>Get your copy: </b>
                     <a class="button" id="amazon" onload="change() ;" target="_blank">Amazon</a>
                     <a class="button" id="whsmith" onload="change() ;" target="_blank">WHSmith</a>
@@ -123,51 +69,63 @@
                 </div>
                 <div class="col-lg-6 indent">
                 <p><u><b>Awards</b></u></p>
-                        {% for award1 in cursor %}<p id="award1">{{ award1[24] }}</p>{% endfor %} 
-                        {% for award2 in cursor %}<p id="award2">{{ award2[25] }}</p>{% endfor %}
-                        {% for award3 in cursor %}<p id="award3">{{ award3[26] }}</p>{% endfor %} 
-                        {% for award4 in cursor %}<p id="award4">{{ award4[27] }}</p>{% endfor %} 
-                        {% for award5 in cursor %}<p id="award5">{{ award5[28] }}</p>{% endfor %} 
-                        {% for award6 in cursor %}<p id="award6">{{ award6[29] }}</p>{% endfor %} 
-                        {% for award7 in cursor %}<p id="award7">{{ award7[30] }}</p>{% endfor %} 
-                        {% for award8 in cursor %}<p id="award8">{{ award8[31] }}</p>{% endfor %} 
-                        {% for award9 in cursor %}<p id="award9">{{ award9[32] }}</p>{% endfor %} 
-                        {% for award10 in cursor %}<p id="award10">{{ award10[33] }}</p>{% endfor %} 
+                        {% for award1 in cursor %}<p id="award1">{{ award1[34] }}</p>{% endfor %} 
+                        {% for award2 in cursor %}<p id="award2">{{ award2[35] }}</p>{% endfor %}
+                        {% for award3 in cursor %}<p id="award3">{{ award3[36] }}</p>{% endfor %} 
+                        {% for award4 in cursor %}<p id="award4">{{ award4[37] }}</p>{% endfor %} 
+                        {% for award5 in cursor %}<p id="award5">{{ award5[38] }}</p>{% endfor %} 
+                        {% for award6 in cursor %}<p id="award6">{{ award6[39] }}</p>{% endfor %} 
+                        {% for award7 in cursor %}<p id="award7">{{ award7[40] }}</p>{% endfor %} 
+                        {% for award8 in cursor %}<p id="award8">{{ award8[41] }}</p>{% endfor %} 
+                        {% for award9 in cursor %}<p id="award9">{{ award9[42] }}</p>{% endfor %} 
+                        {% for award10 in cursor %}<p id="award10">{{ award10[43] }}</p>{% endfor %} 
                 </div>
             </div>
             
             <div class="col-lg-12 space">
 
-                <h3 class="book">My Review <small>{% for myReviewDate in cursor %} {{ myReviewDate[7] }} {% endfor %}</small></h3>
-                <p>{% for myReview in cursor %} {{ myReview[6] }} {% endfor %}</p>
+                <h3 class="book">My Review <small>{% for myReviewDate in cursor %} {{ myReviewDate[8] }} {% endfor %}</small></h3>
+                <p>{% for myReview in cursor %} {{ myReview[7] }} {% endfor %}</p>
             </div>
             <div class="col-lg-4" id="review1">
-                <h3 class="book space">Review Author <small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
-                <p><i>{% for review1 in cursor %} {{ review1[8] }} {% endfor %}</i></p>
+                <h3 class="book space">{% for review1author in cursor %} {{ review1author[10] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review1 in cursor %} {{ review1[9] }} {% endfor %}</i></p>
             </div>
             <div class="col-lg-4" id="review2">
-                <h3 class="book space">Review Author <small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
-                <p><i>{% for review4 in cursor %} {{ review4[11] }} {% endfor %}</i></p>
+                <h3 class="book space">{% for review2author in cursor %} {{ review2author[12] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review2 in cursor %} {{ review2[11] }} {% endfor %}</i></p>
             </div>
             <div class="col-lg-4 space" id="review3">
-                <h3 class="book">Review Author <small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
-                <p><i>{% for review3 in cursor %} {{ review3[10] }} {% endfor %}</i></p>
-            </div>
-            <div class="col-lg-4 space" id="review4">
-                <h3 class="book">Review Author <small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
-                <p><i>{% for review2 in cursor %} {{ review2[9] }} {% endfor %}</i></p>
+                <h3 class="book">{% for review3author in cursor %} {{ review3author[14] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review3 in cursor %} {{ review3[13] }} {% endfor %}</i></p>
             </div>
             <div class="col-lg-4 space" id="review5">
-                <h3 class="book">Review Author <small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
-                <p><i>{% for review5 in cursor %} {{ review5[12] }} {% endfor %}</i></p>
+                <h3 class="book">{% for review5author in cursor %} {{ review5author[18] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review5 in cursor %} {{ review5[17] }} {% endfor %}</i></p>
             </div>
             <div class="col-lg-4 space" id="review6">
-                <h3 class="book">Review Author <small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
-                <p><i>{% for review6 in cursor %} {{ review6[13] }} {% endfor %}</i></p>
+                <h3 class="book">{% for review6author in cursor %} {{ review6author[20] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review6 in cursor %} {{ review6[19] }} {% endfor %}</i></p>
             </div>
-            <div class="col-lg-12 space" id="review7">
-                <h3 class="book">Review Author <small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
-                <p><i>{% for review7 in cursor %} {{ review7[14] }} {% endfor %}</i></p>
+            <div class="col-lg-4 space" id="review7">
+                <h3 class="book">{% for review7author in cursor %} {{ review7author[22] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review7 in cursor %} {{ review7[21] }} {% endfor %}</i></p>
+            </div>
+            <div class="col-lg-4 space" id="review4">
+                <h3 class="book">{% for review4author in cursor %} {{ review4author[16] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review4 in cursor %} {{ review4[15] }} {% endfor %}</i></p>
+            </div>
+            <div class="col-lg-4 space" id="review8">
+                <h3 class="book">{% for review8author in cursor %} {{ review8author[24] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review8 in cursor %} {{ review8[23] }} {% endfor %}</i></p>
+            </div>
+            <div class="col-lg-4 space" id="review9">
+                <h3 class="book">{% for review9author in cursor %} {{ review9author[26] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review9 in cursor %} {{ review9[25] }} {% endfor %}</i></p>
+            </div>
+            <div class="col-lg-12 space" id="review10">
+                <h3 class="book">{% for review10author in cursor %} {{ review10author[28] }} {% endfor %}<small>{% for published in cursor %} {{ published[2] }}{% endfor %}</small></h3>
+                <p><i>{% for review10 in cursor %} {{ review10[27] }} {% endfor %}</i></p>
             </div>
             
         </div>
@@ -193,7 +151,4 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    
-</body>
-
-</html>
+{% endblock %}

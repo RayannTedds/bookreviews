@@ -1,61 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/recent-reviews.css">
-    <title>A-Z</title>
-
-    <!-- Custom CSS -->
-   <link href="css/round-about.css" rel="stylesheet">
+{% extends "layout.html" %}
+  
+{% block content %}
+    <head>
+        <title>A-Z</title>
+        <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+            background-color: rgba(255,218,179,0.95);
+            margin: auto;
+            height: 300px;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 1000px;
+        }
+        
+        /* The Close Button */
+        .x {
+            color: rgba(67,67,67,0.1);
+            float: right;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: -5px;
+        }
+        
+        .x:hover,
+        .x:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    </head>
    
-
-</head>
-
-<body>
-    
-    <img class="background" src="static/img/open-book.jpg" alt="">
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/about-rayann.html">About Rayann</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/a-z.html">A - Z</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/recent.html">Most Recent</a>
-                    </li>
-                    <li>
-                        <a href="https://bookreviews-teddsr.c9users.io/have-your-say.html">Have Your Say</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    
-    
     <!-- Page Content -->
     <div class="container colour">
 
@@ -71,7 +62,30 @@
                 <p class="book"><i>By book title</i></p>
                 <div class="col-lg-4">
                     <h3 class="book">A</h3>
-                    <li>    </li>
+                    <li>
+                        <a href="#" id="aad">Angels & Demons</a>
+                        <!--Modal-->
+                        <div id="aadModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/aad.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Angels-Demons-Robert-Langdon-Book/dp/0552170003" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/angels-and-demons-robert-langdon-book-1/9781409083948" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/angels-and-demons/dan-brown/9780552160896" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="aadx">X</p>
+                                    <b><h2 class="h2modal">Angels & Demons</h2></b>
+                                    <b><h2 class="h2modal"><small>Dan Brown</small></h2></b>
+                                    <p>An ancient secret brotherhood. A devastating new weapon. An unthinkable target.</p>
+                                    <button id="aad" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>  
+                    </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">B</h3>
@@ -80,12 +94,80 @@
                 <div class="col-lg-4">
                     <h3 class="book">C</h3>
                     <li>
-                        <a href="#" id="cft" onclick="document.location=this.id+'.html';return false;" >Cocktails For Three</a>
+                        <a href="#" id="cykas">Can You Keep A Secret?</a>
+                        <!--Modal-->
+                        <div id="cykasModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/cykas.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Can-Keep-Secret-Sophie-Kinsella/dp/0552771104/ref=sr_1_1?s=books&ie=UTF8&qid=1462145450&sr=1-1&keywords=can+you+keep+a+secret" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/can-you-keep-a-secret/9780552771108" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/can-you-keep-a-secret/sophie-kinsella/9780552771108" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="cykasx">X</p>
+                                    <b><h2 class="h2modal">Can You Keep A Secret?</h2></b>
+                                    <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                    <p>'Emma is like every girl in the world. She has a few little secrets.</p>
+                                    <button id="cykas" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="cft">Cocktails For Three</a>
+                        <!--Modal-->
+                        <div id="cftModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/cft.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="http://www.amazon.co.uk/Cocktails-For-Three-Madeleine-Wickham/dp/0552776742" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/cocktails-for-three/9780552776745" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/cocktails-for-three/madeleine-wickham/9780552776745" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="cftx">X</p>
+                                    <b><h2 class="h2modal">Cocktails for Three</h2></b>
+                                    <b><h2 class="h2modal"><small>Madeleine Wickham </small></h2></b>
+                                    <p><i>Sophie Kinsella</i> writes as Madeleine Wickham within a story of secrets, strangers and a splash of scandal.</p>
+                                    <button id="cft" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
                     </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">D</h3>
-                    <li>    </li>
+                    <li>
+                        <a href="#" id="dp">Deception Point</a>
+                        <!--Modal-->
+                        <div id="dpModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/dp.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/gp/product/0552159727/ref=s9_simh_gw_p14_d0_i5?pf_rd_m=A3P5ROKL5A1OLE&pf_rd_s=desktop-1&pf_rd_r=TCJ6ZD61J0S1WQRY8P22&pf_rd_t=36701&pf_rd_p=867551807&pf_rd_i=desktop" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/deception-point/9780552159722" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/deception-point/dan-brown/9780552159722" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="dpx">X</p>
+                                    <b><h2 class="h2modal">Deception Point</h2></b>
+                                    <b><h2 class="h2modal"><small>Dan Brown</small></h2></b>
+                                    <p>Intelligence analyst Rachel Sexton is summoned by the President of the United States to verify a discovery which NASA claims will change the future of the planet itself.</p>
+                                    <button id="dp" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">E</h3>
@@ -98,7 +180,28 @@
                 <div class="col-lg-4">
                     <h3 class="book">G</h3>
                     <li>
-                        <a href="#" id="gsaw" onclick="document.location=this.id+'.html';return false;" >Go Set A Watchman</a>
+                        <a href="#" id="gsaw">Go Set A Watchman</a>
+                        
+                        <!-- The Modal -->
+                        <div id="gsawModal" class="modal">
+                        <!-- Modal content -->
+                            <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                <img src="static/img/gsaw.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="http://www.amazon.co.uk/Go-Set-Watchman-Harper-Lee/dp/1785150286/ref=sr_1_1?s=books&ie=UTF8&qid=1457130629&sr=1-1&keywords=go+set+a+watchman" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/go-set-a-watchman/9781785150289" target="_blank">WHSmith</a>
+                                <a class="button" href="https://www.waterstones.com/book/go-set-a-watchman/harper-lee/9781785150296" target="_blank">Waterstones</a></p></center>
+                            </div>
+                                <div class="col-lg-6">
+                                    <p class="x" id="gsawx">X</p>
+                                    <b><h2 class="h2modal">Go Set A Watchman</h2></b>
+                                    <b><h2 class="h2modal"><small>Harper Lee </small></h3></b>
+                                    <p>Harper Lee's sequel novel to the much loved <i>'To Kill A Mockingbird'.</i></p>
+                                    <button id="gsaw" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </div>
                 <div class="col-lg-4">
@@ -107,11 +210,55 @@
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">I</h3>
-                    <li></li>
+                                        <li>
+                        <a href="#" id="i">Inferno</a>
+                        <!--Modal-->
+                        <div id="iModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/i.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Inferno-Robert-Langdon-Book-4/dp/0552169587/ref=sr_1_1?s=books&ie=UTF8&qid=1461882692&sr=1-1&keywords=inferno" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/inferno-robert-langdon-book-4-robert-langdon-4/9780552169585" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/inferno/dan-brown/9780552169585" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="ix">X</p>
+                                    <b><h2 class="h2modal">Inferno</h2></b>
+                                    <b><h2 class="h2modal"><small>Dan Brown</small></h2></b>
+                                    <p>Seek and ye shall find.</p>
+                                    <button id="i" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">J</h3>
-                    <li></li>
+                    <li>
+                        <a href="#" id="jf">Just Friends</a>
+                        
+                        <!-- The Modal -->
+                        <div id="jfModal" class="modal">
+                        <!-- Modal content -->
+                            <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                <img src="static/img/jf.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="https://www.amazon.co.uk/Just-Friends-Billy-Taylor/dp/1530511518" target="_blank">Amazon</a>
+                            </div>
+                                <div class="col-lg-6">
+                                    <p class="x" id="jfx">X</p>
+                                    <b><h2 class="h2modal">Just Friends</h2></b>
+                                    <b><h2 class="h2modal"><small>Billy Taylor</small></h3></b>
+                                    <p>The new book that has got everyone talking!</p>
+                                    <button id="jf" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">K</h3>
@@ -127,7 +274,30 @@
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">N</h3>
-                    <li></li>
+                    <li>
+                        <a href="#" id="ms">Mini Shopaholic</a>
+                        <div id="msModal" class="modal">
+            
+                          <!-- Modal content -->
+                          <div class="modal-content modalColour">
+                            <div class="col-lg-6">
+                                <img src="static/img/ms.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="https://www.amazon.co.uk/Mini-Shopaholic-Book-6/dp/0552774383/ref=sr_1_1?s=books&ie=UTF8&qid=1462142954&sr=1-1&keywords=mini+shopaholic" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/mini-shopaholic-shopaholic-book-6-shopaholic-6/9780552774383" target="_blank">WHSmith</a>
+                                <a class="button" href="https://www.waterstones.com/book/mini-shopaholic/sophie-kinsella/9780552774383" target="_blank">Waterstones</a></p></center>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <p class="x" id="msx">X</p>
+                                <b><h2 class="h2modal">Mini Shopaholic</h2></b>
+                                <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                <p>Like mother, like daughter</p>
+                                <button id="ms" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">O</h3>
@@ -143,24 +313,372 @@
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">R</h3>
-                    <li></li>
+                    <li>
+                        <a href="#" id="rm">Remember Me?</a>
+                        <!--Modal-->
+                        <div id="rmModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/rm.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Remember-Me-Sophie-Kinsella/dp/0552772763/ref=sr_1_1?s=books&ie=UTF8&qid=1462146716&sr=1-1&keywords=remember+me" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/remember-me/9780552772761" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/remember-me/sophie-kinsella/9780552772761" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="rmx">X</p>
+                                    <b><h2 class="h2modal">Remember Me?</h2></b>
+                                    <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                    <p>What if you woke up and your life was perfect?</p>
+                                    <button id="rm" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">S</h3>
                     <li>
-                        <a href="#" id="soh" onclick="document.location=this.id+'.html';return false;" >Shopaholic on Honeymoon</a>
+                        <a href="#" id="sab">Shopaholic & Baby</a>
+                        <div id="sabModal" class="modal">
+            
+                          <!-- Modal content -->
+                          <div class="modal-content modalColour">
+                            <div class="col-lg-6">
+                                <img src="static/img/sab.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="https://www.amazon.co.uk/Shopaholic-Baby-Book-5/dp/0552772755/ref=sr_1_1?s=books&ie=UTF8&qid=1462141204&sr=1-1&keywords=shopaholic+and+baby" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/shopaholic--baby-shopaholic-book-5/9781409081197" target="_blank">WHSmith</a>
+                                <a class="button" href="https://www.waterstones.com/book/shopaholic-and-baby/sophie-kinsella/9780552772754" target="_blank">Waterstones</a></p></center>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <p class="x" id="sabx">X</p>
+                                <b><h2 class="h2modal">Shopaholic & Baby</h2></b>
+                                <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                <p>Becky Bloomwood is back – with a bump!</p>
+                                <button id="sab" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="sas">Shopaholic & Sister</a>
+                        <div id="sasModal" class="modal">
+            
+                          <!-- Modal content -->
+                          <div class="modal-content modalColour">
+                            <div class="col-lg-6">
+                                <img src="static/img/sas.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="https://www.amazon.co.uk/Shopaholic-Sister-Sophie-Kinsella-Paperback/dp/B0092L2IUI/ref=sr_1_3?s=books&ie=UTF8&qid=1462141700&sr=1-3&keywords=shopaholic+and+sister" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/shopaholic-and-sister-shopaholic-book-4-shopaholic-4/9780552771115" target="_blank">WHSmith</a>
+                                <a class="button" href="https://www.waterstones.com/books/search/term/shopaholic+and+sister" target="_blank">Waterstones</a></p></center>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <p class="x" id="sasx">X</p>
+                                <b><h2 class="h2modal">Shopaholic & Sister</h2></b>
+                                <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                <p>Becky Bloomwood is back!</p>
+                                <button id="sas" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="sa">Shopaholic Abroad</a>
+                        <div id="saModal" class="modal">
+            
+                          <!-- Modal content -->
+                          <div class="modal-content modalColour">
+                            <div class="col-lg-6">
+                                <img src="static/img/sa.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="https://www.amazon.co.uk/Shopaholic-Abroad-Book-2/dp/0552778338/ref=sr_1_1?s=books&ie=UTF8&qid=1462142083&sr=1-1&keywords=shopaholic+abroad" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/shopaholic-abroad-shopaholic-book-2/9781409081043" target="_blank">WHSmith</a>
+                                <a class="button" href="https://www.waterstones.com/book/shopaholic-abroad/sophie-kinsella/9780552778336" target="_blank">Waterstones</a></p></center>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <p class="x" id="sax">X</p>
+                                <b><h2 class="h2modal">Shopaholic Abroad</h2></b>
+                                <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                <p>Will travel broaden the mind…or just loosen the purse strings?</p>
+                                <button id="sa" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="soh">Shopaholic on Honeymoon</a>
+                        <div id="sohModal" class="modal">
+            
+                          <!-- Modal content -->
+                          <div class="modal-content modalColour">
+                            <div class="col-lg-6">
+                                <img src="static/img/soh.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="http://www.amazon.co.uk/Shopaholic-Honeymoon-Short-Story-ebook/dp/B00QMVFLGE/ref=sr_1_1?ie=UTF8&qid=1459522345&sr=8-1&keywords=shopaholic+on+honeymoon" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/shopaholic-on-honeymoon-short-story-/9781473526013" target="_blank">WHSmith</a></p></center>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <p class="x" id="sohx">X</p>
+                                <b><h2 class="h2modal">Shopaholic on Honeymoon</h2></b>
+                                <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                <p>Becky returns in part 3.5 of the <i>Shopholic</i> series.</p>
+                                <button id="soh" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="sttk">Shopaholic Ties the Knot</a>
+                        <div id="sttkModal" class="modal">
+            
+                          <!-- Modal content -->
+                          <div class="modal-content modalColour">
+                            <div class="col-lg-6">
+                                <img src="static/img/sttk.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="https://www.amazon.co.uk/Shopaholic-Ties-Knot-Book/dp/0552999571/ref=sr_1_1?s=books&ie=UTF8&qid=1462142420&sr=1-1&keywords=shopaholic+ties+the+knot" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/shopaholic-ties-the-knot-shopaholic-book-3-shopaholic-3/9780552999571" target="_blank">WHSmith</a>
+                                <a class="button" href="https://www.waterstones.com/book/shopaholic-ties-the-knot/sophie-kinsella/9780552999571" target="_blank">Waterstones</a></p></center>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <p class="x" id="sttkx">X</p>
+                                <b><h2 class="h2modal">Shopaholic Ties the Knot</h2></b>
+                                <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                <p>Something old, something new, something borrowed...and something else new.</p>
+                                <button id="sttk" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="stts">Shopaholic to the Stars</a>
+                        <div id="sttsModal" class="modal">
+            
+                          <!-- Modal content -->
+                          <div class="modal-content modalColour">
+                            <div class="col-lg-6">
+                                <img src="static/img/stts.png" alt="" class="img-center img-circle" />
+                                <center><p class="padding"><b>Get a copy: </b>
+                                <a class="button" href="https://www.amazon.co.uk/Shopaholic-Stars-Book-7/dp/0552778532/ref=sr_1_1?s=books&ie=UTF8&qid=1462142680&sr=1-1&keywords=shopaholic+to+the+stars" target="_blank">Amazon</a>
+                                <a class="button" href="http://www.whsmith.co.uk/products/shopaholic-to-the-stars-shopaholic-7/9780552778534" target="_blank">WHSmith</a>
+                                <a class="button" href="https://www.waterstones.com/book/shopaholic-to-the-stars/sophie-kinsella/9780552778534" target="_blank">Waterstones</a></p></center>
+                            </div>
+                            
+                            <div class="col-lg-6">
+                                <p class="x" id="sttsx">X</p>
+                                <b><h2 class="h2modal">Shopaholic to the Stars</h2></b>
+                                <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                <p>Hollywood, here she comes!</p>
+                                <button id="stts" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                            </div>
+                          </div>
+                        </div>
                     </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">T</h3>
                     <li>
-                        <a href="#" id="tgg" onclick="document.location=this.id+'.html';return false;" >The Great Gatsby</a>
+                        <a href="#" id="tdvc">The Da Vinci Code</a>
+                        <!--Modal-->
+                        <div id="tdvcModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tdvc.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Da-Vinci-Code-Robert-Langdon/dp/0552159719/ref=sr_1_1?s=books&ie=UTF8&qid=1461878294&sr=1-1&keywords=the+da+vinci+code" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/the-da-vinci-code-robert-langdon-book-2-robert-langdon-2/9780552159715" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/the-da-vinci-code/dan-brown/9780552159715" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tdvcx">X</p>
+                                    <b><h2 class="h2modal">The Da Vinci Code</h2></b>
+                                    <b><h2 class="h2modal"><small>Dan Brown </small></h2></b>
+                                    <p>A quest almost as old as time itself. An object thought lost forever. A deadly race to possess it.</p>
+                                    <button id="tdvc" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
                     </li>
                     <li>
-                        <a href="#" id="tkr" onclick="document.location=this.id+'.html';return false;" >The Kite Runner</a>
+                        <a href="#" id="tgg">The Great Gatsby</a>
+                        <!--Modal-->
+                        <div id="tggModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tgg.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="http://www.amazon.co.uk/Books-The-Great-Gatsby-Wordsworth-Classics/dp/185326041X" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/the-great-gatsby-penguin-modern-classics/9780141182636" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/the-great-gatsby/f-scott-fitzgerald/tony-tanner/9780141182636" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tggx">X</p>
+                                    <b><h2 class="h2modal">The Great Gatsby</h2></b>
+                                    <b><h2 class="h2modal"><small>F. Scott Fitzgerald </small></h2></b>
+                                    <p>The classic novel of triumph and tragedy which sees Gatsby's quest lead him from poverty to wealth.</p>
+                                    <button id="tgg" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                        
                     </li>
                     <li>
-                        <a href="#" id="tswk" onclick="document.location=this.id+'.html';return false;" >The Secrets We Keep</a>
+                        <a href="#" id="tkr">The Kite Runner</a>
+                        <!--Modal-->
+                        <div id="tkrModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tkr.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="http://www.amazon.co.uk/Kite-Runner-Khaled-Hosseini/dp/140882485X/ref=sr_1_1?ie=UTF8&qid=1459806112&sr=8-1&keywords=the+kite+runner" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/the-kite-runner/9781408824856" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/the-kite-runner/khaled-hosseini/9781408824856" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tkrx">X</p>
+                                    <b><h2 class="h2modal">The Kite Runner</h2></b>
+                                    <b><h2 class="h2modal"><small>Khaled Hosseini </small></h2></b>
+                                    <p>As a boy in Afganistan, over 26 years ago, Amir experienced an event that would change his life forever.</p>
+                                    <button id="tkr" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="tls">The Lost Symbol</a>
+                        <!--Modal-->
+                        <div id="tlsModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tls.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Lost-Symbol-Robert-Langdon/dp/0552149527/ref=sr_1_1?s=books&ie=UTF8&qid=1461881875&sr=1-1&keywords=the+lost+symbol" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/the-lost-symbol-robert-langdon-book-3-robert-langdon-3/9780552149525" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/the-lost-symbol/dan-brown/9780552149525" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tlsx">X</p>
+                                    <b><h2 class="h2modal">The Lost Symbol</h2></b>
+                                    <b><h2 class="h2modal"><small>Dan Brown </small></h2></b>
+                                    <p>What was lost will be found.</p>
+                                    <button id="tls" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="tsdoas">The Secret Dreamworld of a Shopaholic</a>
+                        <!--Modal-->
+                        <div id="tsdoasModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tsdoas.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Secret-Dreamworld-Shopaholic-Book/dp/055277832X" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/the-secret-dreamworld-of-a-shopaholic-shopaholic-book-1-shopaholic-1/9780552778329" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/the-secret-dreamworld-of-a-shopaholic/sophie-kinsella/9780552778329" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tsdoasx">X</p>
+                                    <b><h2 class="h2modal">The Secret Dreamworld of a Shopaholic</h2></b>
+                                    <b><h2 class="h2modal"><small>Sophie Kinsella</small></h2></b>
+                                    <p>When the going gets tough - the tough go shopping...</p>
+                                    <button id="tsdoas" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <a href="#" id="tswk">The Secrets We Keep</a>
+                        <!--Modal-->
+                        <div id="tswkModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tswk.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="http://www.amazon.co.uk/The-Secrets-Keep-Jonathan-Harvey/dp/1447238478" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/the-secrets-we-keep-main-market-ed/9781447238478" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/the-secrets-we-keep/jonathan-harvey/9781447238478" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tswkx">X</p>
+                                    <b><h2 class="h2modal">The Secrets We Keep</h2></b>
+                                    <b><h2 class="h2modal"><small>Jonathan Harvey</small></h2></b>
+                                    <p>There are some things we can never forget.</p>
+                                    <button id="tswk" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="tug">The Undomestic Goddess</a>
+                        <!--Modal-->
+                        <div id="tugModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tug.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Undomestic-Goddess-Sophie-Kinsella/dp/0552772747/ref=sr_1_1?s=books&ie=UTF8&qid=1462145906&sr=1-1&keywords=the+undomestic+goddess" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/the-undomestic-goddess/9780552772747" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/the-undomestic-goddess/sophie-kinsella/9780552772747" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tugx">X</p>
+                                    <b><h2 class="h2modal">The Undomestic Goddess</h2></b>
+                                    <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                    <p>The story of a girl who needs to slow down. To find herself. To fall in love. And to discover what an iron is for.</p>
+                                    <button id="tug" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="tg">Twenties Girl</a>
+                        <!--Modal-->
+                        <div id="tgModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/tg.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Twenties-Girl-Sophie-Kinsella/dp/0552774367/ref=sr_1_1?s=books&ie=UTF8&qid=1462147225&sr=1-1&keywords=twenties+girl" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/twenties-girl/9780552774369" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/twenties-girl/sophie-kinsella/9780552774369" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="tgx">X</p>
+                                    <b><h2 class="h2modal">Twenties Girl</h2></b>
+                                    <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                    <p>She's having the time of her life!</p>
+                                    <button id="tg" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
                     </li>
                 </div>
                 <div class="col-lg-4">
@@ -173,7 +691,30 @@
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">W</h3>
-                    <li></li>
+                                        <li>
+                        <a href="#" id="wn">Wedding Night</a>
+                        <!--Modal-->
+                        <div id="wnModal" class="modal">
+                
+                              <!-- Modal content -->
+                              <div class="modal-content modalColour">
+                                <div class="col-lg-6">
+                                    <img src="static/img/wn.png" alt="" class="img-center img-circle" />
+                                    <center><p class="padding"><b>Get a copy: </b>
+                                    <a class="button" href="https://www.amazon.co.uk/Wedding-Night-Sophie-Kinsella/dp/0552778516/ref=sr_1_1?s=books&ie=UTF8&qid=1462147517&sr=1-1&keywords=wedding+night" target="_blank">Amazon</a>
+                                    <a class="button" href="http://www.whsmith.co.uk/products/wedding-night/9780552778510" target="_blank">WHSmith</a>
+                                    <a class="button" href="https://www.waterstones.com/book/wedding-night/sophie-kinsella/9780552778510" target="_blank">Waterstones</a></p></center>
+                                </div>
+                                
+                                <div class="col-lg-6">
+                                    <p class="x" id="wnx">X</p>
+                                    <b><h2 class="h2modal">Wedding Night</h2></b>
+                                    <b><h2 class="h2modal"><small>Sophie Kinsella </small></h2></b>
+                                    <p>'How do you stop your sister's wedding night when you know it will not be happy ever after?</p>
+                                    <button id="wn" class="modalButton" onclick="document.location=this.id+'.html';return false;">My Review</button>
+                                </div>
+                        </div>
+                    </li>
                 </div>
                 <div class="col-lg-4">
                     <h3 class="book">X</h3>
@@ -199,7 +740,7 @@
                     </a>
                 </div>
                 <div class="col-lg-2">
-                    <a href="#" id="soh" onclick="document.location=this.html+'.php';return false;" >
+                    <a href="#" id="soh" onclick="document.location=this.id+'.html';return false;" >
                         <img class="img-circle img-n" alt="" src="static/img/soh.png"/>
                     </a>
                 </div>
@@ -249,6 +790,233 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     
-</body>
+<script>
+ // Get the modal
+        var gsawModal = document.getElementById('gsawModal');
+        var sohModal = document.getElementById('sohModal');
+        var tkrModal = document.getElementById('tkrModal');
+        var tggModal = document.getElementById('tggModal');
+        var cftModal = document.getElementById('cftModal');
+        var aadModal = document.getElementById('aadModal');
+        var jfModal = document.getElementById('jfModal');
+        var tswkModal = document.getElementById('tswkModal');
+        var tdvcModal = document.getElementById('tdvcModal');
+        var tlsModal = document.getElementById('tlsModal');
+        var iModal = document.getElementById('iModal');
+        var dpModal = document.getElementById('dpModal');
+        var tsdoasModal = document.getElementById('tsdoasModal');
+        var saModal = document.getElementById('saModal');
+        var sttkModal = document.getElementById('sttkModal');
+        var sasModal = document.getElementById('sasModal');
+        var sabModal = document.getElementById('sabModal');
+        var msModal = document.getElementById('msModal');
+        var sttsModal = document.getElementById('sttsModal');
+        var cykasModal = document.getElementById('cykasModal');
+        var tugModal = document.getElementById('tugModal');
+        var rmModal = document.getElementById('rmModal');
+        var tgModal = document.getElementById('tgModal');
+        var wnModal = document.getElementById('wnModal');
 
-</html>
+        // Get the button that opens the modal
+        var gsaw = document.getElementById("gsaw");
+        var soh = document.getElementById("soh");
+        var tkr = document.getElementById("tkr");
+        var tgg = document.getElementById("tgg");
+        var cft = document.getElementById("cft");
+        var aad = document.getElementById("aad");
+        var jf = document.getElementById("jf");
+        var tswk = document.getElementById("tswk");
+        var tdvc = document.getElementById("tdvc");
+        var tls = document.getElementById("tls");
+        var i = document.getElementById("i");
+        var dp = document.getElementById("dp");
+        var tsdoas = document.getElementById("tsdoas");
+        var sa = document.getElementById('sa');
+        var sttk = document.getElementById('sttk');
+        var sas = document.getElementById('sas');
+        var sab = document.getElementById('sab');
+        var ms = document.getElementById('ms');
+        var stts = document.getElementById('stts');
+        var cykas = document.getElementById('cykas');
+        var tug = document.getElementById('tug');
+        var rm = document.getElementById('rm');
+        var tg = document.getElementById('tg');
+        var wn = document.getElementById('wn');
+        
+        //Get close buttons
+        var gsawx = document.getElementById("gsawx");
+        var sohx = document.getElementById("sohx");
+        var tkrx = document.getElementById("tkrx");
+        var tggx = document.getElementById("tggx");
+        var cftx = document.getElementById("cftx");
+        var aadx = document.getElementById("aadx");
+        var jfx = document.getElementById("jfx");
+        var tswkx = document.getElementById("tswkx");
+        var tdvcx = document.getElementById("tdvcx");
+        var tlsx = document.getElementById("tlsx");
+        var ix = document.getElementById("ix");
+        var dpx = document.getElementById("dpx");
+        var tsdoasx = document.getElementById("tsdoasx");
+        var sax = document.getElementById('sax');
+        var sttkx = document.getElementById('sttkx');
+        var sasx = document.getElementById('sasx');
+        var sabx = document.getElementById('sabx');
+        var msx = document.getElementById('msx');
+        var sttsx = document.getElementById('sttsx');
+        var cykasx = document.getElementById('cykasx');
+        var tugx = document.getElementById('tugx');
+        var rmx = document.getElementById('rmx');
+        var tgx = document.getElementById('tgx');
+        var wnx = document.getElementById('wnx');
+
+        
+        // When the user clicks the button, open the modal 
+        gsaw.onclick = function() {
+            gsawModal.style.display = "block";
+        };
+        soh.onclick = function() {
+            sohModal.style.display = "block";
+        };
+        tkr.onclick = function() {
+            tkrModal.style.display = "block";
+        };
+        tgg.onclick = function() {
+            tggModal.style.display = "block";
+        };
+        cft.onclick = function() {
+            cftModal.style.display = "block";
+        };
+        tswk.onclick = function() {
+            tswkModal.style.display = "block";
+        };
+        aad.onclick = function() {
+            aadModal.style.display = "block";
+        };
+        jf.onclick = function() {
+            jfModal.style.display = "block";
+        };
+        tdvc.onclick = function() {
+            tdvcModal.style.display = "block";
+        };
+        tls.onclick = function() {
+            tlsModal.style.display = "block";
+        };
+        i.onclick = function() {
+            iModal.style.display = "block";
+        };
+        dp.onclick = function() {
+            dpModal.style.display = "block";
+        };
+        tsdoas.onclick = function() {
+            tsdoasModal.style.display = "block";
+        };
+        sa.onclick = function() {
+            saModal.style.display = "block";
+        };
+        sttk.onclick = function() {
+            sttkModal.style.display = "block";
+        };
+        sas.onclick = function() {
+            sasModal.style.display = "block";
+        };
+        sab.onclick = function() {
+            sabModal.style.display = "block";
+        };
+        ms.onclick = function() {
+            msModal.style.display = "block";
+        };
+        stts.onclick = function() {
+            sttsModal.style.display = "block";
+        };
+        cykas.onclick = function() {
+            cykasModal.style.display = "block";
+        };
+        tug.onclick = function() {
+            tugModal.style.display = "block";
+        };
+        rm.onclick = function() {
+            rmModal.style.display = "block";
+        };
+        tg.onclick = function() {
+            tgModal.style.display = "block";
+        };
+        wn.onclick = function() {
+            wnModal.style.display = "block";
+        };
+        
+        //Close button, closing the modal
+        gsawx.onclick= function(){
+            gsawModal.style.display="none";
+        };
+        sohx.onclick= function(){
+            sohModal.style.display="none";
+        };
+        tkrx.onclick= function(){
+            tkrModal.style.display="none";
+        };
+        tggx.onclick= function(){
+            tggModal.style.display="none";
+        };
+        cftx.onclick= function(){
+            cftModal.style.display="none";
+        };
+        tswkx.onclick= function(){
+            tswkModal.style.display="none";
+        };
+        aadx.onclick= function(){
+            aadModal.style.display="none";
+        };
+        jfx.onclick= function(){
+            jfModal.style.display="none";
+        };
+        tdvcx.onclick= function(){
+            tdvcModal.style.display="none";
+        };
+        tlsx.onclick= function(){
+            tlsModal.style.display="none";
+        };
+        ix.onclick= function(){
+            iModal.style.display="none";
+        };
+        dpx.onclick= function(){
+            dpModal.style.display="none";
+        };
+        tsdoasx.onclick= function(){
+            tsdoasModal.style.display="none";
+        };
+        sax.onclick = function() {
+            saModal.style.display = "none";
+        };
+        sttkx.onclick = function() {
+            sttkModal.style.display = "none";
+        };
+        sasx.onclick = function() {
+            sasModal.style.display = "none";
+        };
+        sabx.onclick = function() {
+            sabModal.style.display = "none";
+        };
+        msx.onclick = function() {
+            msModal.style.display = "none";
+        };
+        sttsx.onclick = function() {
+            sttsModal.style.display = "none";
+        };
+        cykasx.onclick = function() {
+            cykasModal.style.display = "none";
+        };
+        tugx.onclick = function() {
+            tugModal.style.display = "none";
+        };
+        rmx.onclick = function() {
+            rmModal.style.display = "none";
+        };
+        tgx.onclick = function() {
+            tgModal.style.display = "none";
+        };
+        wnx.onclick = function() {
+            wnModal.style.display = "none";
+        };
+    
+    </script>
+{% endblock %}
