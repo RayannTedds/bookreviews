@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+  
+{% block content %}
+     <head>
+        <title>Have Your Say</title>
+    </head>
+    
+    <!-- Page Content -->
+    <div class="container colour">
+
+        <!-- Introduction Row -->
+        <div class="row">
+            <div class="col-lg-12 col-sm-4 book-title title">
+                <h2>Have Your Say...</h2>
+                <p class="book"><i>Let me know what you think!</i></p>
+                <div class="col-lg-12 col-sm-4">
+                <p> You can leave me your comments and reviews below, or see others comments <a href="http://bookreviews-teddsr.c9users.io:8080/have-your-say.html">here</a></p>
+                
+                {% for message in get_flashed_messages() %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+                
+                {% for message in form.name.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+                 
+                {% for message in form.email.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+                 
+                {% for message in form.bookname.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+                 
+                {% for message in form.message.errors %}
+                    <div class="flash">{{ message }}</div>
+                {% endfor %}
+                
+                <form action="{{ url_for('contact') }}" method=post>
+                    {{ form.hidden_tag() }}
+                    
+                    <div id="name">
+                        {{ form.name.label }}
+                        {{ form.name }}
+                    </div>
+                    
+                    <div id="email">
+                        {{ form.email.label }}
+                        {{ form.email }}
+                    </div>
+                    
+                    <div id="bookname">    
+                        {{ form.bookname.label }}
+                        {{ form.bookname }}
+                    </div>
+                    
+                    <div id="message">
+                        {{ form.message.label }}
+                        {{ form.message }}
+                        
+                        {{ form.submit }}
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Rayann Tedds 2016</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+{% endblock %}
